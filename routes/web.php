@@ -15,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // fetching all users table data
+    $users = DB::select('select * from users');
+    // $users = DB::insert('insert into users (name, email, password) values(?,?,?)', ['Touseef','check1@gmail.com','abcd1234']);
+    // $users = DB::update('update users set email = "check1@gmail.com" where email = "check@gmail.com"');
+    dd($users);
+    // return view('welcome');
 });
 
 Route::get('/dashboard', function () {
